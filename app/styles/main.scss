@@ -1,0 +1,264 @@
+@import "_variables";
+@import "base";
+@import "form";
+
+
+
+
+/*header*/
+.modal-container{
+  box-shadow: $modal-shadow;
+}
+
+.modal-header{
+  padding: 10px 26px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  .close-btn {
+    @include transform(rotate(45deg));
+    background: $color-gray ;
+    height: 22px;
+    position: relative;
+    width: 2px;
+  }
+  .close-btn:after {
+    background: $color-gray;
+    content: "";
+    height: 2px;
+    left: -10px;
+    position: absolute;
+    top: 10px;
+    width: 22px;
+  }
+}
+
+/*main content*/
+.main-cont{
+  padding-top: 18px;
+  padding-left: 10px;
+  h1{
+    text-align: center;
+  }
+}
+
+.devider-block {
+  display: flex;
+  justify-content: center;
+  .devider-cont {
+    margin-top: -6px;
+    position: relative;
+    font-size: $font-size-large;
+    line-height: 85px;
+    color: $color-accent;
+    font-family: $font-prata;
+    &:before, &:after{
+      content: "";
+      position: absolute;
+      display: block;
+      height: 2px;
+      width: 90px;
+      background: $color-gray;
+      left: 60px;
+      top: 36px;
+    }
+    &:after{
+      left: unset;
+      right: 60px;
+    }
+  }
+}
+.mark-block{
+  display: flex;
+  justify-content: center;
+  color: $color-black;
+  font-family: $font-prata;
+  margin-top: -2px;
+  strong{
+    font-weight: normal;
+    font-size: $font-size-huge;
+    letter-spacing: -3.74px;
+    margin-right: 10px;
+    line-height: 140px;
+  }
+  p{
+    font-size: $font-size-xlarge;
+    margin-top: -2px;
+    span{
+      display: block;
+      font-size: $font-size-normal;
+      text-transform: uppercase;
+      margin-top: -24px;
+      letter-spacing: 1.84px;
+    }
+  }
+}
+
+
+/*confirmation page*/
+
+.confirmation{
+  .main-cont{
+    padding: 7px 40px 24px 39px;
+    h1{
+      text-align: left;
+      font-size: $font-size-xmedium;
+      letter-spacing: 10px;
+      line-height: 65px;
+      padding-left: 3px;
+    }
+    .shape-devider{
+      margin-bottom: 22px;
+    }
+    p{
+      margin-bottom: 30px;
+      line-height: 30px;
+    }
+  }
+}
+
+.shape-devider{
+  display: flex;
+  align-items: center;
+  li{
+    width: 10px;
+    height: 10px;
+    background-color: $color-gray;
+    border-radius: 50%;
+    margin-right: 4px;
+    &:nth-child(2){
+      width: 102px;
+      height: 1px;
+      border-radius: unset;
+    }
+    &:nth-child(4){
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+/*Media Quaries*/
+
+@media (min-width: $layout-breakpoint-desktops) {
+  .modal-header{
+    padding-top: 18px;
+    padding-right: 37px;
+  }
+
+  .modal-container{
+    width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 66px;
+  }
+
+  .section-wrapper{
+    display: flex;
+    position: relative;
+    border-left: 1px solid $color-gray;
+    margin-left: 48px;
+    margin-right: 46px;
+    &:before, &:after{
+      position: absolute;
+      content: "";
+      display: block;
+      background-color: $color-accent;
+      width: 1px;
+      height: 90px;
+      top: -40px;
+      left: -1px;
+      animation: slideInTop 7s;
+
+    }
+    &:after{
+      height: 100px;
+      top: unset;
+      bottom: -79px;
+      animation: slideInBottom 7s;
+
+    }
+  }
+
+  .main-cont{
+    padding-top: 40px;
+    padding-left: 41px;
+    h1{
+      text-align: left;
+      font-size: $font-size-large;
+      line-height: 85px;
+      letter-spacing: 13px;
+    }
+  }
+
+
+  .devider-block{
+    align-self: center;
+    margin-left: -13px;
+    padding-top: 50px;
+    .devider-cont{
+      &:before,
+      &:after{
+        height: 90px;
+        width: 1px;
+        top: -130px;
+        left: 21px;
+        animation: slideInTop 7s;
+      }
+      &:after{
+        top: unset;
+        bottom: -120px;
+        animation: slideInBottom 7s;
+      }
+    }
+  }
+
+  .mark-block{
+    align-self: center;
+    padding-top: 60px;
+    margin-left: -5px;
+    strong{
+      letter-spacing: -4.34px;
+      font-size: $font-size-xhuge;
+    }
+    p{
+      font-size: $font-size-xxlarge;
+      margin-top: -12px;
+      span{
+        font-size: $font-size-xnormal;
+        margin-top: -31px;
+      }
+    }
+  }
+  /*confirmation page*/
+
+  .confirmation .main-cont{
+    padding: 66px 40px 24px 87px ;
+    h1{
+      font-size: $font-size-large;
+      line-height: 85px;
+      letter-spacing: 13px;
+      margin-bottom: 2px;
+    }
+    .shape-devider {
+      margin-left: 5px;
+      margin-bottom: 12px;
+    }
+    p{
+      margin-bottom: 36px;
+      padding-left: 3px;
+    }
+    .primary-btn{
+      margin-left: 3px;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
