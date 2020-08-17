@@ -5,6 +5,11 @@
 
 
 
+.modal-backdrop{
+  display: flex;
+  justify-content: center;
+}
+
 /*header*/
 .modal-container{
   box-shadow: $modal-shadow;
